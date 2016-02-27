@@ -1,0 +1,99 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/static/css/style.css"/>
+   <link rel="stylesheet" href="static/static/css/bootstrap.min.css">
+   <link href="static/static/css/simple-sidebar.css" rel="stylesheet">
+   <script src="static/static/js/jquery-1.12.0.min.js"></script>
+   <script src="static/static/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 0px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+    #sidebar-wrapper
+	{
+    background-color: #555;
+    width:17%;
+	}
+  </style>
+</head>
+
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Calculator</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ url }}"><span class="glyphicon glyphicon-log-in">{{ url_linktext }}</span></a></li>
+           <li><a href="#">No.of Visits: {{ count }}</span></a></li>
+		  <li><a href="#"><span class="glyphicon glyphicon-user">Hi  {{ user.nickname()}}</span></a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<CENTER bgcolor=grey>
+
+<br><br><br><br><br>
+<FORM NAME="SumNums">
+     <h1>The sum of the digits from 1 to:<h1>
+     <INPUT TYPE="text" NAME="charNum"><br><br><br>
+     <INPUT TYPE="button" VALUE="Calculate"
+       onClick="sumDigits(SumNums.charNum.value)">
+</FORM>
+</CENTER>
+
+<SCRIPT>
+function sumDigits(num) {
+     var i, sum = 0;                  // can declare two variables at once
+
+     for (i = 1; i <= num; i++) {
+             sum += i;              // add each number to sum (ie, 1 + 2 + ...+ num)
+     }
+
+     // Display result
+     alert("The sum of the digits from 1 to "+ num + " is\n\n\t " + sum);
+}
+
+</SCRIPT>
+</html>
